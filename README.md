@@ -4,9 +4,9 @@ A collection of Node.js backend projects for learning and practice.
 
 ## Projects
 
-1. [Simple API Server | oddiy API serveri](#1-simple-api-server)
-2. [URL Shortener | URL qisqartiruvchi](#2-get-random-number)
-3. [URL Shortener](#3-url-shortener)
+1. [Simple API Server | Oddiy API serveri](#1-simple-api-server)
+2. [Get random number | Tasodifiy son qaytarish](#2-get-random-number)
+3. [URL Shortener | URL qisqartiruvchi](#3-url-shortener)
 4. [Authentication System](#4-authentication-system)
 5. [Real-Time Chat Application](#5-real-time-chat-application)
 6. [Blogging Platform](#6-blogging-platform)
@@ -30,16 +30,20 @@ A collection of Node.js backend projects for learning and practice.
 ### 1. Simple API Server
 
 Build a basic API server using Express.js that handles CRUD operations for a simple resource like "todos" or "notes."
-
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Oddiy API serveri: "todos" yoki "eslatmalar" kabi oddiy resurs uchun CRUD operatsiyalarini boshqaradigan Express.js yordamida asosiy API serverini yarating. Marshrutlarni sozlash, so'rovlar va javoblarni ko'rib chiqish va oddiy xotiradagi ma'lumotlar ombori bilan o'zaro ishlashga e'tibor qarating.
 
-### 2. URL Shortener
+### 2. Get random Number
 
-Create a URL shortening service using Express.js and a database like MongoDB.
+Get random number
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Tasodifiy son qaytaruvchi xizmat: bu dasturda siz berilgan chegaradagi tasodifiy sonnni qaytarishingiz kerak 
 
 ### 3. URL Shortener
 
 Create a URL shortening service using Express.js and a database like MongoDB.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+URL qisqartiruvchi: Express.js va MongoDB kabi maʼlumotlar bazasidan foydalanib URL qisqartirish xizmatini yarating. Foydalanuvchilar uzun URL manzilini yuborishlari va qisqartirilgan versiyasini olishlari kerak. Qisqartirilgan havolaga tashrif buyurgan foydalanuvchilarni asl URL manziliga yo'naltirish uchun qayta yo'naltirish mantiqini amalga oshiring.
 
 ### 4. Authentication System
 

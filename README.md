@@ -30,16 +30,20 @@ O'rganish va amaliyot uchun backend loyihalari to'plami.
 ## Project Descriptions
 
 ### 1. Simple API Server
-[for example | namuna](https://github.com/qobulovasror/backend-project-ideas/tree/master/projects%20source%20codes/1.simple%20API%20servers%20todo%20and%20reminder)
+
 Build a basic API server using Express.js that handles CRUD operations for a simple resource like "todos" or "notes."
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Oddiy API serveri: "todos" yoki "eslatmalar" kabi oddiy resurs uchun CRUD operatsiyalarini boshqaradigan Express.js yordamida asosiy API serverini yarating. Marshrutlarni sozlash, so'rovlar va javoblarni ko'rib chiqish va oddiy xotiradagi ma'lumotlar ombori bilan o'zaro ishlashga e'tibor qarating.
+
+[for example | namuna](https://github.com/qobulovasror/backend-project-ideas/tree/master/projects%20source%20codes/1.simple%20API%20servers%20todo%20and%20reminder)
 
 ### 2. Get random Number
 
 Get random number
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Tasodifiy son qaytaruvchi xizmat: bu dasturda siz berilgan chegaradagi tasodifiy sonnni qaytarishingiz kerak 
+
+[for example | namuna](https://github.com/qobulovasror/backend-project-ideas/tree/master/projects%20source%20codes/2.getrandom)
 
 ### 3. URL Shortener
 
@@ -149,6 +153,10 @@ Feel free to choose any of these projects to practice and enhance your Node.js b
 
 **Note:** These projects are not only for nade js developers, all backend developers can do these projects using other known technologies
 
-**Eslatma:** Bu loyhalar faqat nade js dasturchilari ucun emas, bu loyhalarni barcha backend dasturchilari boshqa bilgan texnologiyalar yordamida qilishi munkun
+**Eslatma:** Bu loyhalar faqat nade js dasturchilari uchun emas, bu loyhalarni barcha backend dasturchilari boshqa bilgan texnologiyalar yordamida qilishi munkun
 
+Remember that you should try to implement best practices such as modular code organization, error handling, and security considerations when implementing projects. Also, consider deploying your projects to a cloud platform like Heroku or AWS to gain experience with deployment workflows.
 
+Start with simpler projects and gradually progress to more complex projects as you gain confidence and understanding. Good luck with your Node.js backend course!
+
+Remember that these projects increase in complexity as you progress and require a deeper understanding of various concepts and technologies. Don't hesitate to break projects down into smaller tasks and tackle them one at a time. Have fun building and learning with these projects!

@@ -1,0 +1,27 @@
+{
+  "name": "1.simple-api-servers-todo-and-reminder",
+  "version": "1.0.0",
+  "description": "this is application for working API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "simple API",
+    "todo",
+    "reminder"
+  ],
+  "author": "Qobulov Asror",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.1.2",
+    "winston": "^3.9.0"
+  }
+}

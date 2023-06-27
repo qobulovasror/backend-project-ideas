@@ -1,0 +1,292 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.between {
+    justify-content: space-between;
+}
+.t-center {
+    text-align: center;
+}
+#mun-sun {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.card {
+    width: 280px;
+    height: 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(241, 241, 241);
+    padding: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 9px 1px;
+}
+.energy span {
+    width: 20px;
+    height: 15px;
+    margin-left: 5px;
+    border: 1px solid #000;
+    border-radius: 20%;
+}
+.energy span::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 11px;
+    margin: 1px;
+    background-color: #000;
+}
+.energy span::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 7px;
+    margin-left: 18px;
+    margin-top: 2px;
+    border: 1px solid #000;
+}
+.time {
+    width: 230px;
+    height: 230px;
+    margin: 10px auto;
+    margin-top: 25px;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+.time #tayanch {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    z-index: 5;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+.time #hour {
+    width: 8px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%) rotate(0deg);
+    transform-origin: bottom;
+    background-color: #000;
+}
+.time #minute {
+    width: 5px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%) rotate(0deg);
+    transform-origin: bottom;
+    background-color: #000;
+}
+.time #secund {
+    width: 3px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%) rotate(0deg);
+    transform-origin: bottom;
+    background-color: #f00;
+}
+.hour-number {
+    width: 230px;
+    height: 230px;
+    margin: -2px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #000;
+    font-size: 23px;
+    font-weight: bold;
+}
+.hour-number .unikki {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.unikki::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: 47%;
+    left: -195%;
+    transform: rotate(-33deg);
+    background-color: #000;
+}
+.unikki::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: 51%;
+    left: 262%;
+    transform: rotate(33deg);
+    background-color: #000;
+}
+.hour-number .uch {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%,-50%);
+}
+.uch::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: 217%;
+    left: -65%;
+    transform: rotate(-61deg);
+    background-color: #000;
+}
+.uch::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: -182%;
+    left: -50%;
+    transform: rotate(59deg);
+    background-color: #000;
+}
+.hour-number .olti {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.olti::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: -13%;
+    left: -406%;
+    transform: rotate(32deg);
+    background-color: #000;
+}
+.olti::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: -18%;
+    left: 486%;
+    transform: rotate(-38deg);
+    background-color: #000;
+}
+.hour-number .tuqqiz {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%,-50%);
+}
+.tuqqiz::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: -177%;
+    left: 105%;
+    transform: rotate(-60deg);
+    background-color: #000;
+}
+.tuqqiz::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    top: 225%;
+    left: 119%;
+    transform: rotate(53deg);
+    background-color: #000
+}
+.time-disp {
+    margin-top: 20px;
+    text-align: center;
+}
+.time-disp span {
+    font-size: 28px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.time-disp h3 {
+    margin-right: 20px;
+}
+.display {
+    margin: 0 66px;
+}
+.setting {
+    position: absolute;
+    top: 90%;
+    right: 3%;
+}
+
+.moon {
+    width: 38px;
+    height: 21px;
+    border-radius: 50px;
+    outline: none;
+    background-color: #CDC;
+    margin: 10px auto;
+    padding: 1px;
+}
+.moon .sunbtn {
+    width: 17px;
+    height: 18px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translateX(0px);
+    transition: .5s;
+}
+.light {
+    background-color: #ccc;
+    color: #000
+}
+
+
+
+.dark {
+    background-color: #000;
+    color: #fff;
+}
+.dark .card {
+    background-color: #222;
+}
+.dark .energy span ,  .dark .energy span::before ,.dark .hour-number {
+    border-color: #fff;
+}
+.dark .energy span::after,
+.dark #hour ,
+.dark #minute ,
+.dark .hour-number > *::after ,
+.dark .hour-number > *::before {
+     background-color: #fff;
+}
+.dark .card , .dark .setting-win{
+    box-shadow: none;
+}

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const categoryController = require('../controller/categoryController');
-//get all category
+//get category
 router.get('/', categoryController.getCategory);
 
 // //add category

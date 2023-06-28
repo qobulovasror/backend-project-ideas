@@ -2,6 +2,7 @@ const express = require("express");
 const todo = require("../routes/todo");
 const user = require('../routes/user');
 const category = require('../routes/category');
+const auth = require('../routes/auth');
 
 module.exports = function(app) {
   // middlewares
@@ -15,6 +16,7 @@ module.exports = function(app) {
   // routes
   app.use("/api/todo", todo);
   app.use("/api/user", user);
+  app.use("/api/auth", auth);
   app.use("/api/category", category);
 
   // root route

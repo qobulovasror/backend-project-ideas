@@ -43,7 +43,7 @@ async function postUser(req, res) {
         const hashPass = await bcrypt.hash(req.body.password,salt);
         user.password = hashPass;
         await user.save();
-        res.send(_.pick(user,['name','email','roling']));
+        res.send(_.pick(user,['_id','name','email']));
     }
     catch(error){
         res.status(500).json({ error: `Failed to fetch user: ${error}` });
@@ -58,20 +58,28 @@ async function putUser(req, res) {
         const {error} = userRequirestValidate(req.body);
         if(error) 
             return res.status(401).send(error.details[0].message);
-        user = await User.findOne({email: req.body.email});
-        if(user)
-            return res.status(400).send("Bu email oldin ro'yxatdan o'tgan");
-        user = new User({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
-            role: req.body.role
-        });
         const salt = await bcrypt.genSalt();
         const hashPass = await bcrypt.hash(req.body.password,salt);
-        user.password = hashPass;
-        await user.save();
-        res.send(_.pick(user,['name','email','roling']));
+        user = await User.findByIdAndUpdate(req.params.id, {
+            name: req.body.name,
+            password: hashPass,
+            role: req.body.role    
+        },{new: true});
+        if(!user)
+            return res.status(404).send('Berilgan ID li ma\'lumot topilmadi');
+        res.send(_.pick(user,['_id','name','email']));
+    }
+    catch(error){
+        res.status(500).json({ error: "Failed to fetch user" });
+    }
+}
+
+const deleteUser = async (req, res) => {
+    try{
+        const user = await User.findByIdAndDelete(req.params.id);
+        if(!user) 
+            return res.status(404).send('user not fount');
+        res.send("Foydalanuvchi ma'lumotlari o'chirildi");
     }
     catch(error){
         res.status(500).json({ error: "Failed to fetch user" });
@@ -83,5 +91,7 @@ async function putUser(req, res) {
 module.exports = {
     getAllUsers,
     getUser,
-    postUser
+    postUser,
+    putUser,
+    deleteUser
 }

@@ -4,7 +4,7 @@ const categoryController = require('../controller/categoryController');
 router.get('/', categoryController.getCategory);
 
 // //add category
-// router.post('/')
+router.post('/', categoryController.addCategory);
 
 // //update category
 // router.put('/')

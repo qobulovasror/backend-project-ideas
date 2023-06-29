@@ -1,5 +1,6 @@
 const { Todo, TodoValidate } = require("../models/todo");
 const objectId = require('mongoose').Types.ObjectId;
+const categoryController = require('./categoryController'); 
 
 async function getAllTodos(req, res) {
   try {
@@ -9,8 +10,9 @@ async function getAllTodos(req, res) {
     if(!objectId.isValid(userId)) 
       return res.status(401).json({"error": "userId must be of type objectId"});
     
+    const categories = await categoryController.getCategories(userId)
     const todo = await Todo.find();
-    res.json(todo);
+    res.json(categories);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch todos" });
   }

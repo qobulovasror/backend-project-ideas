@@ -19,8 +19,9 @@ const Category = mongoose.model('Category', CategorySchema, 'category');
 
 const categoryValidate = (category)=> {
     const categoryValidateSchema = Joi.object({
-        name: Joi.string().required().min(30).max(50),
-        icon: Joi.string()
+        name: Joi.string().required().min(3).max(50),
+        icon: Joi.string(),
+        userId: Joi.string().required()
     });
     return categoryValidateSchema.validate(category)
 }

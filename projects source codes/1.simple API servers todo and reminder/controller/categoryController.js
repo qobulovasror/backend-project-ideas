@@ -29,7 +29,7 @@ async function addCategory(req, res){
             return res.status(401).send(error.details[0].message);
         if(!objectId.isValid(req.body.userId)) 
             return res.status(401).json({"error": "userId must be of type objectId"});
-        let category = await Category.find({name: req.body.name});
+        let category = await Category.findOne({name: req.body.name});
         if(!category){
             category = new Category({
                 name: req.body.name,
@@ -37,11 +37,14 @@ async function addCategory(req, res){
             });
             category = await category.save();
         }
-        const usersHasCategory = new UsersHasCategory({
-            userId: req.body.userId,
-            categoryId: category._id
-        });
-        await usersHasCategory.save()
+        let usersHasCategory = await UsersHasCategory.findOne({userId: req.body.userId, categoryId: category._id});
+        if(!usersHasCategory){
+            usersHasCategory = new UsersHasCategory({
+                userId: req.body.userId,
+                categoryId: category._id
+            });
+            await usersHasCategory.save()
+        }
         res.send(category)
     } catch (error) {
         res.status(500).json({ error: `Failed to fetch data ${error}`});

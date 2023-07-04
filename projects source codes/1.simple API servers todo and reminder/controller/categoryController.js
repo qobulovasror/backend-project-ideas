@@ -51,8 +51,62 @@ async function addCategory(req, res){
     }
 }
 
+
+async function updateCategory(req, res){
+    try{
+        if(!objectId.isValid(req.params.id)) 
+            return res.status(401).json({"error": "id objectId turida bo'lishi kerak"});
+        let category = await Category.findById(req.params.id);
+        if(!category)
+            return res.status(404).send('Berilgan id\'li category yo\'q')
+        const {error} = categoryValidate(req.body);
+        if(error)
+            return res.status(401).send(error.details[0].message);
+        //get req.user id no equel in db userId
+        let usersHasCategory = await UsersHasCategory
+            .find({categoryId: category._id, userId: {$ne: req.body.userId}});
+        console.log(usersHasCategory)
+        if(usersHasCategory.length!==0){
+            return res.status(400).send("Berilga id'li category o'zgartirib bo'lmaydi")
+        }
+        category = await Category.findByIdAndUpdate(req.params.id, {
+            name: req.body.name,
+            icon: req.body.icon
+        }) 
+        res.send(category._id)
+    } catch (error) {
+        res.status(500).json({ error: `Failed to fetch data ${error}`});
+    }
+}
+
+async function deleteCategory(req, res){
+    try{
+        if(!objectId.isValid(req.params.id)) 
+            return res.status(401).json({"error": "id objectId turida bo'lishi kerak"});
+        let category = await Category.findById(req.params.id)
+        if(!category)
+            return res.status(404).send("Berilgan id'li category yo'q")
+        let usersHasCategory = await UsersHasCategory
+            .find({categoryId: category._id, userId: {$ne: req.body.userId}});
+        if(usersHasCategory){
+            usersHasCategory = await UsersHasCategory
+                .deleteOne({categoryId: category._id, userId: req.body.userId})
+        }else{
+            usersHasCategory = await UsersHasCategory
+                .deleteOne({categoryId: category._id, userId: req.body.userId});
+            category = await Category.findByIdAndDelete(req.params.id)
+        }
+        res.send(category)
+        
+    }catch(error){
+        res.status(500).json({ error: `Failed to fetch data ${error}`});
+    }
+}
+
 module.exports = {
     getCategory,
     getCategories,
-    addCategory
+    addCategory,
+    updateCategory,
+    deleteCategory
 }

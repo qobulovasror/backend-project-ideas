@@ -3,6 +3,7 @@ const todo = require("../routes/todo");
 const user = require('../routes/user');
 const category = require('../routes/category');
 const auth = require('../routes/auth');
+const errorMiddleware = require('../middleware/error')
 
 module.exports = function(app) {
   // middlewares
@@ -23,4 +24,6 @@ module.exports = function(app) {
   // app.get("/", (req, res) => {
   //   res.render("index");
   // });
+
+  app.use(errorMiddleware);
 };

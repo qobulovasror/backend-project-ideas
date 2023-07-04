@@ -59,6 +59,14 @@ async function addTodo(req, res){
   }
 }
 
+async function editTodo(req, res){
+  try{
+    
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch todos" });
+  }
+}
+
 module.exports = {
   getAllTodos,
   getTodo,

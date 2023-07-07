@@ -6,12 +6,13 @@ const TodoSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 3,
-        maxlength: 100
+        maxlength: 100,
+        unique: true
     },
     status: {
         type: String,
         required: true,
-        enum: ['complate', 'todo', 'fail']
+        enum: ['complate', 'todo', 'fail', "none"]
     },
     didline: {
         type: Date

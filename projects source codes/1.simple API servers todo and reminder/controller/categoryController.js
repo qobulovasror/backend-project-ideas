@@ -18,7 +18,7 @@ async function getCategory(req, res){
         const categories = await getCategories(userId)
         res.send(categories);
     } catch (error) {
-        res.status(500).json({ error: `Failed to fetch data ${error}`});
+        res.status(500).json({ error: `Ma'lumotni olishda xatolik ${error}`});
     }
 }
 
@@ -47,7 +47,7 @@ async function addCategory(req, res){
         }
         res.send(category)
     } catch (error) {
-        res.status(500).json({ error: `Failed to fetch data ${error}`});
+        res.status(500).json({ error: `Ma'lumotni olishda xatolik ${error}`});
     }
 }
 
@@ -75,7 +75,7 @@ async function updateCategory(req, res){
         }) 
         res.send(category._id)
     } catch (error) {
-        res.status(500).json({ error: `Failed to fetch data ${error}`});
+        res.status(500).json({ error: `Ma'lumotni olishda xatolik ${error}`});
     }
 }
 
@@ -97,9 +97,8 @@ async function deleteCategory(req, res){
             category = await Category.findByIdAndDelete(req.params.id)
         }
         res.send(category)
-        
     }catch(error){
-        res.status(500).json({ error: `Failed to fetch data ${error}`});
+        res.status(500).json({ error: `Ma'lumotni olishda xatolik ${error}`});
     }
 }
 

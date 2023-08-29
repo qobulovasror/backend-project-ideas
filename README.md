@@ -51,6 +51,8 @@ Create a URL shortening service using Express.js and a database like MongoDB.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 URL qisqartiruvchi: Express.js va MongoDB kabi maʼlumotlar bazasidan foydalanib URL qisqartirish xizmatini yarating. Foydalanuvchilar uzun URL manzilini yuborishlari va qisqartirilgan versiyasini olishlari kerak. Qisqartirilgan havolaga tashrif buyurgan foydalanuvchilarni asl URL manziliga yo'naltirish uchun qayta yo'naltirish mantiqini amalga oshiring.
 
+[for example | namuna](https://github.com/qobulovasror/backend-project-ideas/tree/master/projects%20source%20codes/3.url_shortener)
+
 ### 4. Authentication System
 
 Build a user authentication system using a framework like Passport.js.
